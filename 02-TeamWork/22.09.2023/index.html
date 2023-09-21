@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Soruları ve Cevapları</title>
+</head>
+<body>
+    <h1>SQL Soruları ve Cevapları</h1>
+
+    <h2>Soru 1:</h2>
+    <p>Write a query that returns track name and its composer from tracks table.</p>
+    <h3>Cevap 1:</h3>
+    <p>SELECT Name, Composer FROM tracks;</p>
+    <p><em>Bu sorgu, şarkı adını ve bestecisini "tracks" tablosundan getirir.</em></p>
+
+    <h2>Soru 2:</h2>
+    <p>Write a query that returns the unique name of composers of each track.</p>
+    <h3>Cevap 2:</h3>
+    <p>SELECT DISTINCT Composer FROM tracks;</p>
+    <p><em>Bu sorgu, her şarkının bestecisinin benzersiz adını getirir.</em></p>
+
+    <h2>Soru 3:</h2>
+    <p>Write a query that returns all columns from the tracks table.</p>
+    <h3>Cevap 3:</h3>
+    <p>SELECT * FROM tracks;</p>
+    <p><em>Bu sorgu, "tracks" tablosundaki tüm sütunları getirir.</em></p>
+
+    <h2>Soru 4:</h2>
+    <p>Write a query that returns the unique combinations of AlbumId and MediaTypeId from the tracks table.</p>
+    <h3>Cevap 4:</h3>
+    <p>SELECT DISTINCT AlbumId, MediaTypeId FROM tracks;</p>
+    <p><em>Bu sorgu, "tracks" tablosundaki AlbumId ve MediaTypeId sütunlarının benzersiz kombinasyonlarını getirir.</em></p>
+
+    <h2>Soru 5:</h2>
+    <p>Write a query that returns track name and track ID for tracks composed by 'Jorge Ben'.</p>
+    <h3>Cevap 5:</h3>
+    <p>SELECT TrackId, Name AS TrackName FROM tracks WHERE Composer = 'Jorge Ben';</p>
+    <p><em>Bu sorgu, 'Jorge Ben' tarafından bestelenen şarkıların adını ve ID'sini getirir.</em></p>
+
+    <h2>Soru 6:</h2>
+    <p>Write a query that returns all information of the invoices of which total amount is greater than $25.</p>
+    <h3>Cevap 6:</h3>
+    <p>SELECT * FROM invoices WHERE Total > 25;</p>
+    <p><em>Bu sorgu, toplam tutarı $25'ten büyük olan faturaların tüm bilgilerini getirir.</em></p>
+
+    <h2>Soru 7:</h2>
+    <p>Write a query that returns all information of the first 5 invoices where the total amount is less than $15.</p>
+    <h3>Cevap 7:</h3>
+    <p>SELECT * FROM invoices WHERE Total < 15 LIMIT 5;</p>
+    <p><em>Bu sorgu, toplam tutarı $15'ten düşük olan ilk 5 faturanın tüm bilgilerini getirir.</em></p>
+
+    <h2>Soru 8:</h2>
+    <p>Write a query that returns all information of the invoices of which total amount is greater than $10, sorted from highest to lowest total amount, and displaying the top 2 rows.</p>
+    <h3>Cevap 8:</h3>
+    <p>SELECT * FROM invoices WHERE Total > 10 ORDER BY Total DESC LIMIT 2;</p>
+    <p><em>Bu sorgu, toplam tutarı $10'dan büyük olan faturaların toplam tutarına göre yüksekten düşüğe sıralanmış ilk 2 satırını getirir.</em></p>
+
+    <h2>Soru 9:</h2>
+    <p>Write a query that returns all information of the invoices where the billing country is not Canada, sorted from highest to lowest total amount, and displaying the top 10 rows.</p>
+    <h3>Cevap 9:</h3>
+    <p>SELECT * FROM invoices WHERE BillingCountry <> 'Canada' ORDER BY Total DESC LIMIT 10;</p>
+    <p><em>Bu sorgu, fatura ülkesi Kanada olmayan faturaların toplam tutarına göre yüksekten düşüğe sıralanmış ilk 10 satırını getirir.</em></p>
+
+    <h2>Soru 10:</h2>
+    <p>Write a query that returns the artist's album information.</p>
+    <h3>Cevap 10:</h3>
+    <p><em>Bu sorgu, sanatçının albüm bilgilerini getirmek için birden fazla tabloyu içeren bir SQL sorgusu kullanır. Varsayılan olarak "artists," "albums," ve olası bir ara tabloyu (örneğin, "artist_albums") sanatçılar ve albümler arasındaki ilişkiyi temsil etmek için kullanıyorsanız, işte genel bir sorgu yapısı:</em></p>
+    <p>SELECT a.ArtistName, al.AlbumName, al.ReleaseYear FROM artists a JOIN artist_albums aa ON a.ArtistId = aa.ArtistId JOIN albums al ON aa.AlbumId = al.AlbumId;</p>
+    <p><em>Bu sorgu, sanatçının albüm bilgilerini getirir.</em></p>
+
+
+
+    <h2>Soru 11:</h2>
+    <p>Write a query that returns the track names that start with 'B' and end with 'S'.</p>
+    <h3>Cevap 11:</h3>
+    <p>SELECT Name FROM tracks WHERE Name LIKE 'B%S';</p>
+    <p><em>Bu sorgu, 'B' ile başlayan ve 'S' ile biten şarkı adlarını getirir.</em></p>
+
+    <h2>Soru 12:</h2>
+    <p>Write a query that returns the newest date among the invoice dates between 2008 and 2011.</p>
+    <h3>Cevap 12:</h3>
+    <p>SELECT MAX(InvoiceDate) AS NewestDate FROM invoices WHERE InvoiceDate BETWEEN '2008-01-01' AND '2011-12-31';</p>
+    <p><em>Bu sorgu, 2008 ile 2011 tarihleri arasındaki fatura tarihleri arasındaki en yeni tarihi getirir.</em></p>
+
+    <h2>Soru 13:</h2>
+    <p>Write a query that returns all information of the invoices of which the total amount is greater than $50.</p>
+    <h3>Cevap 13:</h3>
+    <p>SELECT * FROM invoices WHERE Total > 50;</p>
+    <p><em>Bu sorgu, toplam tutarı $50'den büyük olan faturaların tüm bilgilerini getirir.</em></p>
+
+    <h2>Soru 14:</h2>
+    <p>Write a query that returns the first and last name of the customers who have orders from Norway and Belgium.</p>
+    <h3>Cevap 14:</h3>
+    <p>SELECT FirstName, LastName FROM customers WHERE CustomerId IN ( SELECT CustomerId FROM invoices WHERE BillingCountry = 'Norway' ) AND CustomerId IN ( SELECT CustomerId FROM invoices WHERE BillingCountry = 'Belgium' );</p>
+    <p><em>Bu sorgu, Norveç ve Belçika'dan siparişleri olan müşterilerin adlarını getirir.</em></p>
+
+    <h2>Soru 15:</h2>
+    <p>Write a query that returns the track names of 'ZAPPA'.</p>
+    <h3>Cevap 15:</h3>
+    <p>SELECT Name FROM tracks WHERE Composer = 'ZAPPA';</p>
+    <p><em>Bu sorgu, 'ZAPPA' tarafından bestelenen şarkıların adlarını getirir.</em></p>
+
+    <h2>Soru 16:</h2>
+    <p>Write a query that returns the total number of each composer's tracks.</p>
+    <h3>Cevap 16:</h3>
+    <p>SELECT Composer, COUNT(*) AS TotalTracks FROM tracks GROUP BY Composer;</p>
+    <p><em>Bu sorgu, her bestecinin toplam şarkı sayısını getirir.</em></p>
+
+    <h2>Soru 17:</h2>
+    <p>Write a query that returns the genre of each track.</p>
+    <h3>Cevap 17:</h3>
+    <p>SELECT t.Name AS TrackName, g.Name AS Genre FROM tracks t JOIN genres g ON t.GenreId = g.GenreId;</p>
+    <p><em>Bu sorgu, her şarkının türünü getirir.</em></p>
+
+    <h2>Soru 18:</h2>
+    <p>Write a query that returns the artist's album information.</p>
+    <h3>Cevap 18:</h3>
+    <p><em>Bu sorgu, sanatçının albüm bilgilerini getirmek için birden fazla tabloyu içeren bir SQL sorgusu kullanır. Varsayılan olarak "artists," "albums," ve olası bir ara tabloyu (örneğin, "artist_albums") sanatçılar ve albümler arasındaki ilişkiyi temsil etmek için kullanıyorsanız, işte genel bir sorgu yapısı:</em></p>
+    <p>SELECT a.ArtistName, al.AlbumName, al.ReleaseYear FROM artists a JOIN artist_albums aa ON a.ArtistId = aa.ArtistId JOIN albums al ON aa.AlbumId = al.AlbumId;</p>
+    <p><em>Bu sorgu, sanatçının albüm bilgilerini getirir.</em></p>
+
+    <h2>Soru 19:</h2>
+    <p>Write a query that returns the minimum duration of a track in each album, displaying album ID, album title, and duration of the track.</p>
+    <h3>Cevap 19:</h3>
+    <p>SELECT a.AlbumId, a.Title AS AlbumTitle, MIN(t.Milliseconds) AS MinimumDuration FROM albums a JOIN tracks t ON a.AlbumId = t.AlbumId GROUP BY a.AlbumId, a.Title;</p>
+    <p><em>Bu sorgu, her albümdeki bir şarkının minimum süresini, albüm ID'sini, albüm başlığını ve şarkının süresini getirir.</em></p>
+
+    <h2>Soru 20:</h2>
+    <p>Write a query that returns albums whose total duration is higher than 60 minutes, displaying album title and their durations, sorted from highest to lowest duration.</p>
+    <h3>Cevap 20:</h3>
+    <p>SELECT a.Title AS AlbumTitle, SUM(t.Milliseconds) / 60000 AS DurationInMinutes FROM albums a JOIN tracks t ON a.AlbumId = t.AlbumId GROUP BY a.AlbumId, a.Title HAVING DurationInMinutes > 60 ORDER BY DurationInMinutes DESC;</p>
+    <p><em>Bu sorgu, toplam süresi 60 dakikadan fazla olan albümleri, albüm başlığı ve süreleri ile birlikte getirir ve süreye göre en yüksekten en düşüğe sıralar.</em></p>
+
+    <h2>Soru 21:</h2>
+    <p>Write a query that returns the track ID, track name, and album ID info of the albums with titles 'Prenda Minha', 'Heart of the Night', and 'Out Of Exile'.</p>
+    <h3>Cevap 21:</h3>
+    <p>SELECT t.TrackId, t.Name AS TrackName, t.AlbumId FROM tracks t JOIN albums a ON t.AlbumId = a.AlbumId WHERE a.Title IN ('Prenda Minha', 'Heart of the Night', 'Out Of Exile');</p>
+    <p><em>Bu sorgu, 'Prenda Minha', 'Heart of the Night' ve 'Out Of Exile' başlıklı albümlerin parça ID'sini, parça adını ve albüm ID bilgisini getirir.</em></p>
+
+
+    <h2>Soru 22:</h2>
+    <p>Write a query that returns the track names having the minimum and maximum duration, separately.</p>
+    <h3>Cevap 22:</h3>
+    <p><strong>Minimum Duration:</strong><br>SELECT Name AS TrackName, Milliseconds AS Duration FROM tracks ORDER BY Duration ASC LIMIT 1;<br><em>Bu sorgu, en kısa süreli şarkının adını ve süresini getirir.</em></p>
+    <p><strong>Maximum Duration:</strong><br>SELECT Name AS TrackName, Milliseconds AS Duration FROM tracks ORDER BY Duration DESC LIMIT 1;<br><em>Bu sorgu, en uzun süreli şarkının adını ve süresini getirir.</em></p>
+
+    <h2>Soru 23:</h2>
+    <p>Write a query that returns the tracks having a duration less than the average duration.</p>
+    <h3>Cevap 23:</h3>
+    <p>SELECT * FROM tracks WHERE Milliseconds < ( SELECT AVG(Milliseconds) FROM tracks );<br><em>Bu sorgu, ortalama süreden daha kısa süreli olan tüm şarkıları getirir.</em></p>
+
+    <h2>Soru 24:</h2>
+    <p>Write a query that returns the total number of each composer's tracks.</p>
+    <h3>Cevap 24:</h3>
+    <p>SELECT Composer, COUNT(*) AS TotalTracks FROM tracks GROUP BY Composer;<br><em>Bu sorgu, her bestecinin toplam şarkı sayısını getirir.</em></p>
+
+    <h2>Soru 25:</h2>
+    <p>Write a query that returns the genre of each track.</p>
+    <h3>Cevap 25:</h3>
+    <p>SELECT t.Name AS TrackName, g.Name AS Genre FROM tracks t JOIN genres g ON t.GenreId = g.GenreId;<br><em>Bu sorgu, her şarkının türünü getirir.</em></p>
+</body>
+</html>
