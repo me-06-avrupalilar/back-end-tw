@@ -92,13 +92,13 @@
     <h2>Soru 14:</h2>
     <p>Write a query that returns the first and last name of the customers who have orders from Norway and Belgium.</p>
     <h3>Cevap 14:</h3>
-    <p>SELECT FirstName, LastName FROM customers WHERE CustomerId IN ( SELECT CustomerId FROM invoices WHERE BillingCountry = 'Norway' ) AND CustomerId IN ( SELECT CustomerId FROM invoices WHERE BillingCountry = 'Belgium' );</p>
+    <p>SELECT FirstName,LastName from Customer where Country in ("Norway","Belgium")</p>
     <p><em>Bu sorgu, Norveç ve Belçika'dan siparişleri olan müşterilerin adlarını getirir.</em></p>
 
     <h2>Soru 15:</h2>
     <p>Write a query that returns the track names of 'ZAPPA'.</p>
     <h3>Cevap 15:</h3>
-    <p>SELECT Name FROM tracks WHERE Composer = 'ZAPPA';</p>
+    <p>SELECT Name FROM tracks WHERE Composer LİKE '%ZAPPA%';</p>
     <p><em>Bu sorgu, 'ZAPPA' tarafından bestelenen şarkıların adlarını getirir.</em></p>
 
     <h2>Soru 16:</h2>
