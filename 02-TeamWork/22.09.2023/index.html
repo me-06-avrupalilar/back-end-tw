@@ -11,55 +11,55 @@
     <h2>Soru 1:</h2>
     <p>Write a query that returns track name and its composer from tracks table.</p>
     <h3>Cevap 1:</h3>
-    <p>SELECT Name, Composer FROM tracks;</p>
+    <p>SELECT Name, Composer FROM track</p>
     <p><em>Bu sorgu, şarkı adını ve bestecisini "tracks" tablosundan getirir.</em></p>
 
     <h2>Soru 2:</h2>
     <p>Write a query that returns the unique name of composers of each track.</p>
     <h3>Cevap 2:</h3>
-    <p>SELECT DISTINCT Composer FROM tracks;</p>
+    <p>SELECT DISTINCT Composer FROM track</p>
     <p><em>Bu sorgu, her şarkının bestecisinin benzersiz adını getirir.</em></p>
 
     <h2>Soru 3:</h2>
     <p>Write a query that returns all columns from the tracks table.</p>
     <h3>Cevap 3:</h3>
-    <p>SELECT * FROM tracks;</p>
+    <p>SELECT * FROM track</p>
     <p><em>Bu sorgu, "tracks" tablosundaki tüm sütunları getirir.</em></p>
 
     <h2>Soru 4:</h2>
     <p>Write a query that returns the unique combinations of AlbumId and MediaTypeId from the tracks table.</p>
     <h3>Cevap 4:</h3>
-    <p>SELECT DISTINCT AlbumId, MediaTypeId FROM tracks;</p>
+    <p>SELECT DISTINCT AlbumId, MediaTypeId FROM track</p>
     <p><em>Bu sorgu, "tracks" tablosundaki AlbumId ve MediaTypeId sütunlarının benzersiz kombinasyonlarını getirir.</em></p>
 
     <h2>Soru 5:</h2>
     <p>Write a query that returns track name and track ID for tracks composed by 'Jorge Ben'.</p>
     <h3>Cevap 5:</h3>
-    <p>SELECT TrackId, Name AS TrackName FROM tracks WHERE Composer = 'Jorge Ben';</p>
+    <p>SELECT Name, TrackID FROM Track WHERE Composer = 'Jorge Be';</p>
     <p><em>Bu sorgu, 'Jorge Ben' tarafından bestelenen şarkıların adını ve ID'sini getirir.</em></p>
 
     <h2>Soru 6:</h2>
     <p>Write a query that returns all information of the invoices of which total amount is greater than $25.</p>
     <h3>Cevap 6:</h3>
-    <p>SELECT * FROM invoices WHERE Total > 25;</p>
+    <p>SELECT * FROM invoice WHERE Total > 25</p>
     <p><em>Bu sorgu, toplam tutarı $25'ten büyük olan faturaların tüm bilgilerini getirir.</em></p>
 
     <h2>Soru 7:</h2>
     <p>Write a query that returns all information of the first 5 invoices where the total amount is less than $15.</p>
     <h3>Cevap 7:</h3>
-    <p>SELECT * FROM invoices WHERE Total < 15 LIMIT 5;</p>
+    <p>SELECT * FROM invoice WHERE Total < 15 LIMIT 5;</p>
     <p><em>Bu sorgu, toplam tutarı $15'ten düşük olan ilk 5 faturanın tüm bilgilerini getirir.</em></p>
 
     <h2>Soru 8:</h2>
     <p>Write a query that returns all information of the invoices of which total amount is greater than $10, sorted from highest to lowest total amount, and displaying the top 2 rows.</p>
     <h3>Cevap 8:</h3>
-    <p>SELECT * FROM invoices WHERE Total > 10 ORDER BY Total DESC LIMIT 2;</p>
+    <p>SELECT * FROM invoice WHERE Total > 10 ORDER BY Total DESC LIMIT 2;</p>
     <p><em>Bu sorgu, toplam tutarı $10'dan büyük olan faturaların toplam tutarına göre yüksekten düşüğe sıralanmış ilk 2 satırını getirir.</em></p>
 
     <h2>Soru 9:</h2>
     <p>Write a query that returns all information of the invoices where the billing country is not Canada, sorted from highest to lowest total amount, and displaying the top 10 rows.</p>
     <h3>Cevap 9:</h3>
-    <p>SELECT * FROM invoices WHERE BillingCountry <> 'Canada' ORDER BY Total DESC LIMIT 10;</p>
+    <p>SELECT * FROM invoice WHERE BillingCountry <> 'Canada' ORDER BY Total DESC LIMIT 10;</p>
     <p><em>Bu sorgu, fatura ülkesi Kanada olmayan faturaların toplam tutarına göre yüksekten düşüğe sıralanmış ilk 10 satırını getirir.</em></p>
 
     <h2>Soru 10:</h2>
@@ -74,7 +74,7 @@
     <h2>Soru 11:</h2>
     <p>Write a query that returns the track names that start with 'B' and end with 'S'.</p>
     <h3>Cevap 11:</h3>
-    <p>SELECT Name FROM tracks WHERE Name LIKE 'B%S';</p>
+    <p>SELECT Name FROM track WHERE Name LIKE 'B%S';</p>
     <p><em>Bu sorgu, 'B' ile başlayan ve 'S' ile biten şarkı adlarını getirir.</em></p>
 
     <h2>Soru 12:</h2>
